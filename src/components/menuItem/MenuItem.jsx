@@ -1,9 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './MenuItem.scss';
 
-const MenuItem = ({ title, image, size }) => (
-    <div className={`${size} menu_item`}>
+const MenuItem = ({ title, image, size, history, match, linkUrl }) => (
+    <div className={`${size} menu_item`} 
+         onClick={() => history.push(`${match.url}${linkUrl}`)}
+    >
         <div className="background_image" style={{ backgroundImage: `url(${image})` }} />
         <div className='content'>
             <h1 className='title'>{title.toUpperCase()}</h1>
@@ -12,4 +15,5 @@ const MenuItem = ({ title, image, size }) => (
     </div>
 );
 
-export default MenuItem;
+// Getting acees to the router props (history, location & match) with higher order component from react-router-dom
+export default withRouter(MenuItem);
