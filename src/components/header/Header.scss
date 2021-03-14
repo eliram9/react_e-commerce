@@ -1,14 +1,15 @@
 .header {
-    height: 70px;
+    height: 50px;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
     padding: 0 75px;
 
     .logo_container {
         height: 100%;
-        width: 70px;
+        width: 100%;
+        display: flex;
+        align-items: center;
     }
 
     .options {
@@ -19,7 +20,7 @@
         justify-content: flex-end;
 
         .option {
-        padding: 10px 15px;
+        padding: 0px 15px;
         }
     }
 }
